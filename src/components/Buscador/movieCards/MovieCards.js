@@ -2,24 +2,38 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styles from "./MovieCards.module.css"
 import { addMovieFavorite, getMovies } from "../../../actions";
+import { NavLink } from 'react-router-dom';
+import { MovieCard } from "./MovieCard";
 
-class MovieCards extends Component {
+export class MovieCards extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            is: false
+            is: true
         };
-
     }
 
     render() {
-        console.log(this.props.data)
-        const movie = this.props.data;
+        const moviesLoaded = this.props.moviesLoaded;
+        console.log(moviesLoaded)
+
+        const renderListOfMovies = () => (
+            moviesLoaded.map((movie, i) => (
+                <MovieCard
+                    key={ i }
+                    movie={ movie }
+                    onAddToFavorite={ () => this.props.onAddToFavorite }
+
+                />
+            ))
+        )
+
+
 
         return (
-            <div className={ styles.MovieCardsContainer }>
-
-            </div>
+            <ul className={ styles.MovieCardsContainer }>
+                { moviesLoaded !== undefined ? renderListOfMovies() : console.log('SIN MOVIES') }
+            </ul>
 
         )
     }
@@ -34,6 +48,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        // addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
     };
 }
 

@@ -1,10 +1,11 @@
 .MovieCardContainer{
+    /* padding-top: 20px; */
     background-color: var(--color-primario);
     color: white;
     border: 1px solid var(--color-6);
 
-    width: 170px;
-    height: 245px;
+    width: 230px;
+    height: 320px;
 
     display: flex;
     flex-direction: column;
@@ -13,35 +14,63 @@
     border-radius: 6px;
     box-sizing: content-box;
 
+    /* ESPACIO ENTRE CARDS */
+    margin: 10px;
+
 }
-.MovieCardContainer > h3{
-    /* padding: 0; */
-    margin: 7px 0px;
+
+h3{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 12px;
+    align-self: center;
+    font-weight: 500;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: 4px;
+    color: white;
+    /* text-decoration: none; */
+}
+h3:hover{
+    color: var(--color-2);
+    text-decoration: overline;
 }
 
 .imgPoster{
     border-radius: 5px;
+    margin: 5px 0px;
 }
 
 .btnAddToFavorites{
-    width: -0.9rem;
-    height:- 0.9rem;
+    width: 35px;
+    height: 25px;
 
-    position: absolute;
+    position: relative;
+    z-index: auto;
     display: flex;
-    justify-self: flex-end;
+    /* justify-self: flex-end; */
+    justify-content: center;
+    align-items: center;
     align-self: flex-end;
-    margin-right: 1px;
-    margin-top: 1px;
+    /* margin-right: 1px;
+    margin-top: 0px; */
+    top: 0px;
 
     font-size: 1.12rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 3px;
 
     background-color: transparent;
-    border: 1px solid white;
-    color: gold;
+    border: 0px solid rgb(85, 85, 85);
+    color: rgb(158, 158, 158);
+    cursor: pointer;
 }
+.btnAddToFavorites:hover{
+    background-color: var(--color-4);
+    color: white;
+}
+
 
 
 

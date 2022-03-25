@@ -5,6 +5,7 @@ import { addMovieFavorite, getMovies } from "../../actions";
 import styles from './Buscador.module.css';
 import { MovieCard } from "./movieCards/MovieCard";
 import { NavLink } from 'react-router-dom';
+import { MovieCards } from "./movieCards/MovieCards";
 
 
 export class Buscador extends Component {
@@ -27,25 +28,26 @@ export class Buscador extends Component {
     const { movies } = this.props;
     // console.log(this.props.moviesFavourites)
 
-    const renderListOfMovies = () => (
-      // this.props.movies.map((movie, i) => (
-      //   <li key={ i }>
+    // const renderListOfMovies = () => (
+    // this.props.movies.map((movie, i) => (
+    //   <li key={ i }>
 
-      //     <NavLink exact to={ `/movie/${movie.imdbID}` }>{ movie.Title }</NavLink>
-      //     <button onClick={ () => this.props.addMovieFavorite(
-      //       { Title: movie.Title, id: movie.imdbID }
-      //     ) } >+</button>
+    //     <NavLink exact to={ `/movie/${movie.imdbID}` }>{ movie.Title }</NavLink>
+    //     <button onClick={ () => this.props.addMovieFavorite(
+    //       { Title: movie.Title, id: movie.imdbID }
+    //     ) } >+</button>
 
-      //   </li>
-      // ))
+    //   </li>
+    // ))
 
-      this.props.movies.map((movie, i) => (
-        <li key={ i }>
-          <MovieCard movie={ movie } onAddToFavorite={ this.props.addMovieFavorite } />
 
-        </li>
-      ))
-    )
+    //   this.props.movies.map((movie, i) => (
+    //     <li key={ i }>
+    //       <MovieCard movie={ movie } onAddToFavorite={ this.props.addMovieFavorite } />
+
+    //     </li>
+    //   ))
+    // )
 
     const movie = {
       "Title": "Titanic",
@@ -61,7 +63,7 @@ export class Buscador extends Component {
 
           {/* <label className={ styles.nameMovie } htmlFor="title">Película a buscar: </label> */ }
           <input className={ styles.inputMovie }
-            placeholder="busca una peli..."
+            placeholder="busca películas o series"
             type="text"
             id="title"
             autoComplete="off"
@@ -74,11 +76,14 @@ export class Buscador extends Component {
 
         </form>
         <hr />
-        <MovieCard movie={ movie } />
 
-        <ul>
-          { movies && movies.length ? renderListOfMovies() : null }
-        </ul>
+        { <ul>
+
+          <MovieCards
+            moviesLoaded={ this.props.movies }
+            onAddToFavorite={ this.props.addMovieFavorite } />
+
+        </ul> }
       </div>
     );
   }

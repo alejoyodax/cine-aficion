@@ -19,11 +19,17 @@ code {
 }
 
 :root {
+  /* TAMAÑO PANTALLA PEQUEÑA */
+  --max-width-phone : 530px;
+
+
   --color-primario: #2d333b;
-  --color-2: #A74165;
+  --color-2: #d6819f;
   --color-3: #8F5C21;
-  --color-4: #8E557B;
-  --color-5: #D698C1;
+  --color-4: #3b32b4;
+  --color-41: #2e2974;
+  /* --color-5: #D698C1; */
   --color-5: #181e25;
   --color-6: #4f5963;
+  --color-btn-search:rgb(99, 76, 175) ;
 }

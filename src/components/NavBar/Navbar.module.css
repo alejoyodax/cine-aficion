@@ -10,6 +10,8 @@
     padding: 0 20px;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
+    position: sticky;
 }
 
 .navbar nav {
@@ -43,6 +45,9 @@
     border-bottom: 4px solid transparent;
     text-decoration: none;
     border-radius: 5px;
+
+    /* align-items: center;
+    justify-content: center; */
 }
 
 .listItem a:hover,
@@ -56,7 +61,7 @@
 
 
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 490px) {
     /* Aquí van los estilos para smartphones */
     .logoCA {
         /* border: 3px solid white; */
@@ -73,7 +78,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 10px 20px;
+        padding: 5px 20px;
         box-sizing: border-box;
     }
 
