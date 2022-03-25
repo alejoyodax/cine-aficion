@@ -1,0 +1,86 @@
+.navbar {
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar nav {
+    height: 100%;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+}
+
+.listItem {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+
+.listItem a {
+    margin: 0 3px;
+    background-color:var(--color-5);
+    color: white;
+    /* height: 100%; */
+    padding: 10px 10px;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.listItem a:hover,
+.listItem a.active {
+    background-color: var(--color-4);
+    border-radius: 5px;
+
+    color: white;
+    /* text-decoration: none; */
+}
+
+
+
+@media screen and (max-width: 520px) {
+    /* Aquí van los estilos para smartphones */
+    .logoCA {
+        /* border: 3px solid white; */
+        display: block;
+    }
+
+    .navbar {
+        height: 120px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--color-primario);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+
+
+
+
+
+
+    }
+

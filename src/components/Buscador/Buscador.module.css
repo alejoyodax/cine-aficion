@@ -1,0 +1,103 @@
+
+
+.buscadorContainer{
+    font-family: 'Poppins', sans-serif;
+
+    /* border: 1px solid; */
+    /* border-color: white; */
+    background-color: var(--color-5);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    /* justify-items: center; */
+    /* align-items: center; */
+
+    padding: 15px 10vh;
+    box-sizing:border-box;
+
+    
+    /* height: 300vh; */
+}
+
+.nameMovie{
+    color: white;
+}
+
+hr {
+    border-style: solid;
+    border: 1px solid var(--color-4);
+
+}
+
+
+.inputMovie{
+    /* width: 100%; */
+    min-width: 100px;
+    max-width: 240px ;
+
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+
+    /* ESTILOS */
+    /* border-radius: 3px; */
+    min-height: 35px;
+
+    background-color: var(--color-6);
+    margin-right: 10px;
+
+}
+
+.btnBuscar{
+    /* width: 100%; */
+    max-width: 100px ;
+
+    background-color: var(--color-primario);
+    color: white;
+    border: 0px;
+    cursor: pointer;
+    min-height: 35px;
+    /* border-radius: 3px; */
+    /* padding: 0 15px; */
+
+}
+
+/* .inputMovie */
+
+
+
+@media screen and (max-width: 520px) {
+    .buscadorContainer{
+        font-family: 'Poppins', sans-serif;
+    
+        /* border: 1px solid; */
+        /* border-color: white; */
+        background-color: var(--color-5);
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center ;
+        /* justify-items: center; */
+        align-items: center;
+    
+        /* padding: 15px 10vh; */
+        box-sizing:border-box;
+    
+        
+        /* height: 300vh; */
+    }
+
+
+    .inputMovie, .btnBuscar{
+        margin: 0;
+        width: 300px;
+        min-width: 200px;
+        max-width: 100vw ;
+        height: 45px;
+        padding: 0;
+        /* padding: 0 10px; */
+    }
+
+
+    }

@@ -1,0 +1,53 @@
+.MovieCardContainer{
+    background-color: var(--color-primario);
+    color: white;
+    border: 1px solid var(--color-6);
+
+    width: 170px;
+    height: 245px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 6px;
+    box-sizing: content-box;
+
+}
+.MovieCardContainer > h3{
+    /* padding: 0; */
+    margin: 7px 0px;
+}
+
+.imgPoster{
+    border-radius: 5px;
+}
+
+.btnAddToFavorites{
+    width: -0.9rem;
+    height:- 0.9rem;
+
+    position: absolute;
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-right: 1px;
+    margin-top: 1px;
+
+    font-size: 1.12rem;
+    font-weight: 600;
+    border-radius: 5px;
+
+    background-color: transparent;
+    border: 1px solid white;
+    color: gold;
+}
+
+
+
+
+
+
+
+
+
