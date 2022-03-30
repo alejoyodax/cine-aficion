@@ -1,61 +1,42 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import styles from "./MovieCards.module.css"
-import { addMovieFavorite, getMovies } from "../../../actions";
-import { NavLink } from 'react-router-dom';
 import { MovieCard } from "./MovieCard";
+import something from "../../../img/something.png"
 
 export class MovieCards extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            is: true
+            isFirstSearch: true
         };
     }
 
     render() {
         const moviesLoaded = this.props.moviesLoaded;
-        console.log(moviesLoaded)
 
         const renderListOfMovies = () => (
             moviesLoaded.map((movie, i) => (
                 <MovieCard
                     key={ i }
                     movie={ movie }
-                    onAddToFavorite={ () => this.props.onAddToFavorite }
-
+                    addFav={ this.props.addFav }
                 />
             ))
         )
 
+        const searchSomething = this.props.isFirstSearch ? <img className={ styles.imgSomething } src={ something } alt="search_something.png" /> : null
+        // console.log(this.props)
 
 
         return (
             <ul className={ styles.MovieCardsContainer }>
-                { moviesLoaded !== undefined ? renderListOfMovies() : console.log('SIN MOVIES') }
+                { moviesLoaded !== undefined ? renderListOfMovies() : searchSomething }
             </ul>
 
         )
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        movies: state.moviesLoaded.Search,
-        moviesFavourites: state.moviesFavourites,
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        // addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
-    };
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(MovieCards);
 
 
 

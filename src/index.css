@@ -33,3 +33,9 @@ code {
   --color-6: #4f5963;
   --color-btn-search:rgb(99, 76, 175) ;
 }
+
+hr {
+  border-style: solid;
+  border: 1px solid var(--color-41);
+
+}

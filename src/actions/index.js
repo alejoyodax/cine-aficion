@@ -19,22 +19,25 @@ export function addMovieFavorite(movie) {
 // retorna una lista de peliculas
 export function getMovies(titulo) {
     return function (dispatch) {
+        dispatch({ type: GET_MOVIES, payload: {} }) // LIMPIAMOS LA LISTA DE MOVIES PARA EVITAR COMPORTAMIENTOS INESPERADOS CUANDO SE BUSCA DE NUEVO
         return fetch(`${baseUrl}&s=${titulo}`)
             .then(r => r.json())
             .then(json => {
                 // console.log("GET_MOVIES", json)
-                json.Response === "True" ? dispatch({ type: GET_MOVIES, payload: json }) : console.log('PELI NO ENCONTRADA');
+                json.Response === "True" ? dispatch({ type: GET_MOVIES, payload: json }) : console.log(json);
             }).catch(e => console.log(e))
     };
 }
 // retorna detalles de una peli a partir de un id
 export function getDetails(id) {
     return function (dispatch) {
+        // http://www.omdbapi.com/?apikey=cc23b478&i=tt0120338&plot=full
         fetch(`${baseUrl}&i=${id}`)
-            .then(r => r.json)
+            .then(r => r.json())
             .then(json => dispatch(
                 { type: GET_DETAILS, payload: json })
             )
+            .catch(err => console.log(err))
     };
 }
 
@@ -42,7 +45,7 @@ export function getDetails(id) {
 // elimina una peli de favoritos a partir de un id
 export function removeMovieFavorite(id) {
     return {
-        type: ADD_MOVIE_FAVORITE,
+        type: REMOVE_MOVIE_FAVORITE,
         payload: id
     }
 }

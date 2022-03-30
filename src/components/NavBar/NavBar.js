@@ -14,9 +14,9 @@ export default function NavBar() {
             <nav>
                 <ul className={ styles.list }>
                     <li className={ styles.listItem }>
-                        <NavLink activeClassName={styles.linkActive} exact to="/" >Buscador</NavLink>
-                        <NavLink to="/favs" >Favoritas</NavLink>
-                        <NavLink to="/acerda-de" >Sobre mi</NavLink>
+                        <NavLink activeClassName={ styles.linkActive } exact to="/" >Buscador</NavLink>
+                        <NavLink to="/favs" >Mis favoritas</NavLink>
+                        <NavLink to="/acerda-de" >Acerca de</NavLink>
                     </li>
                 </ul>
             </nav>

@@ -9,6 +9,7 @@ const initialState = {
   moviesFavourites: [], // GUARDA OBJETOS MOVIES ({title: xxx, imdbID: xxx}) DE PELICULAS FAVORITAS
   moviesLoaded: {},     // CONTIENE UNA LISTA DE PELICULAS 
   movieDetail: {},      // UN OBJETO CON INFORMACION DE UNA PELICULA
+  isFirstSearch: true,
 }
 
 // action --> {type: xxx, payload: xxx}
@@ -18,7 +19,8 @@ export default function rootReducer(state = initialState, action) {
     case GET_MOVIES:
       return {
         ...state,
-        moviesLoaded: action.payload
+        moviesLoaded: action.payload,
+        isFirstSearch: false,
       }
 
     case ADD_MOVIE_FAVORITE:
