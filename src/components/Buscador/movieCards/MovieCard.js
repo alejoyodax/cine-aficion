@@ -18,12 +18,11 @@ export class MovieCard extends Component {
       // console.log(this.props.data)
       const movie = this.props.movie;
 
+
       const renderTitle = (movieTitle) => {
-         if (movieTitle.length > 25) {
-            return (<h3>{ `${movieTitle.slice(0, 25)}...` }</h3>)
-         } else {
-            return (<h3>{ movieTitle }</h3>)
-         }
+         return movieTitle.length > 25 ?
+            <h3>{ `${movieTitle.slice(0, 25)}...` }</h3> :
+            <h3>{ movieTitle }</h3>
       }
 
 

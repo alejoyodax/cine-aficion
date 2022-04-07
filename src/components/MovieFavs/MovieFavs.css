@@ -29,14 +29,3 @@
 .btnShareFavs:active{
     background-color: var(--color-6);
 }
-.btnShareFavsPressed{
-    background-color: rgb(231, 155, 13);
-    border: 0px;
-    color: white;
-    height: 45px;
-    font-weight: bold;
-    font-size: 1.02rem;
-    border-radius: 3px;
-    margin: 0 15px;
-    cursor: pointer;
-}
